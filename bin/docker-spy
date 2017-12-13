@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 #!/usr/bin/env python
-
+import yaml
 from spy.spy import get_network_info
 import argparse
 
@@ -7,4 +8,4 @@ parser = argparse.ArgumentParser(description='Get some info about docker network
 parser.add_argument('iface', metavar='IFACE', type=str, help='Interface on which the container listen to')
 args = parser.parse_args()
 
-print(get_network_info(args.iface))
+print(yaml.safe_dump(get_network_info(args.iface)))

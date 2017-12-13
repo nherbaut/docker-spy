@@ -1,4 +1,4 @@
-all : venv clean build
+all : venv clean build buildp2
 
 venv: .venv/bin/activate
 
@@ -18,7 +18,13 @@ clean-pyc:
 		find . -name '__pycache__' -exec rm -fr {} +
 
 install: clean
-		.venv/bin/python setup.py install
+		python setup.py install
 
 build:
 	    .venv/bin/python setup.py bdist_egg
+
+buildp2:
+	    .venvp2/bin/python setup.py bdist_egg
+
+publish:
+	   scp ./dist/Docker_Spy-0.0.2-py2.7.egg  nhelig:/home/nherbaut/vagrant-test/master/srv/salt/docker_spy/Docker_Spy-0.0.2-py2.7.egg
