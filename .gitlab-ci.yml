@@ -4,7 +4,7 @@ before_script:
 
 build:
   script:
-    - make create-venv3 clean build
+    - make ci
   artifacts:
     paths:
       - dist/

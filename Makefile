@@ -1,3 +1,6 @@
+ci: clean create-venv3 build3
+
+
 all : clean build3
 
 clean: clean-build clean-pyc
@@ -25,11 +28,10 @@ build2:
 	    .venv2/bin/python setup.py bdist_egg
 
 create-venv3:
-		virtualenv --python=python3 .venv
-		. .venv/bin/activate
-		pip3 install -r requirements.txt
+		virtualenv --python=python3 .venv3
+		.venv3/bin/pip3 install -r requirements.txt
 
-create-venv3:
+create-venv2:
 	virtualenv --python=python2 .venv2
 	. .venv2/bin/activate
 	pip install -r requirements.txt
