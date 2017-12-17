@@ -1,8 +1,6 @@
-all : venv clean build buildp2
+all : clean build3
 
-venv: .venv/bin/activate
-
-clean: clean-build clean-pyc 
+clean: clean-build clean-pyc
 
 clean-build:
 		rm -fr build/
@@ -20,11 +18,18 @@ clean-pyc:
 install: clean
 		python setup.py install
 
-build:
-	    .venv/bin/python setup.py bdist_egg
+build3:
+	    .venv3/bin/python setup.py bdist_egg
 
-buildp2:
-	    .venvp2/bin/python setup.py bdist_egg
+build2:
+	    .venv2/bin/python setup.py bdist_egg
 
-publish:
-	   scp ./dist/Docker_Spy-0.0.2-py2.7.egg  nhelig:/home/nherbaut/vagrant-test/master/srv/salt/docker_spy/Docker_Spy-0.0.2-py2.7.egg
+create-venv3:
+		virtualenv --python=python3 .venv
+		. .venv/bin/activate
+		pip3 install -r requirements.txt
+
+create-venv3:
+	virtualenv --python=python2 .venv2
+	. .venv2/bin/activate
+	pip install -r requirements.txt

@@ -2,7 +2,6 @@ backports.ssl-match-hostname==3.5.0.1
 certifi==2017.11.5
 chardet==3.0.4
 docker==2.6.1
-Docker-Spy==0.0.2
 idna==2.6
 ipaddress==1.0.18
 netifaces==0.10.6
