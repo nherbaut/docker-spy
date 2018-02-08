@@ -1,7 +1,7 @@
-ci: clean create-venv3 build3
+ci: clean create-venv2 build2
 
 
-all : clean build3
+all : clean build2
 
 clean: clean-build clean-pyc
 
