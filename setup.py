@@ -7,7 +7,7 @@ with open("requirements.txt") as requirements_file:
 
 setup(
     name='Docker-Spy',
-    version='0.0.5',
+    version='0.0.6',
     description='Output in Yaml networking info from your running containers',
     author='Nicolas Herbaut',
     author_email='nicolas.herbaut@univ-grenoble-alpes.fr',
